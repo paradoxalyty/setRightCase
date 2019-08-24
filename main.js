@@ -10,13 +10,15 @@ checkPrompt(deposit);
  * @param {string} deposit количество рублей в виде строки.
  * @returns {string} В зависимости от введенных данных - соответствующее предложение..
  */
-function checkPrompt(deposit) {
+function checkPrompt() {
     if (deposit == null) {
         alert("К сожалетию вы отменили сделку.");
     } else if (isNaN(parseInt(deposit)) || !Number.isInteger(Number(deposit))) {
         alert("Введите пожалуйста целое число.");
     } else if (parseInt(deposit) === 0) {
-        alert("Невозможно зачислить 0 рублей.");
+        alert("Вы ввели 0, попробуйте ещё раз.");
+    } else if (parseInt(deposit) < 0) {
+        alert("Вы ввели отрицательное число, попробуйте ещё раз.");
     } else {
         alert(`Ваша сумма в ${deposit} ${setRightCaseForPenultimateElem()} успешно зачислена.`);
     }
