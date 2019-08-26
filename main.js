@@ -35,26 +35,7 @@ function setRightCaseForPenultimateElem() {
     if (penultimateElem === '1') {
         return "рублей";
     } else {
-        return setRightCase2();
-    }
-}
-
-/**
- * Функция возвращает верный падеж для слова "рубль", в конкретных случаях или
- * вызывает следующую функцию для проверки всех других возможных вариантов.
- * @returns {string} В зависимости от введенных данных - слово в соответствующем падеже .
- */
-function setRightCase2() {
-
-    switch (parseInt(deposit)) {
-        case 1:
-            return "рубль";
-        case 2:
-        case 3:
-        case 4:
-            return "рубля";
-        default:
-            return setRightCase3();
+        return setRightCase();
     }
 }
 
@@ -63,7 +44,7 @@ function setRightCase2() {
  * от остатка от деления на 10.
  * @returns {string} В зависимости от введенных данных - слово "рубль" в соответствующем падеже .
  */
-function setRightCase3() {
+function setRightCase() {
 
     switch (parseInt(deposit) % 10) {
         case 1:
