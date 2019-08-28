@@ -3,8 +3,8 @@ checkPrompt();
 /**
  * Функция проверяет введенные данные и в зависимости от полученных данных
  * выдает соответствующую ошибку или вызывает соответствующую функцию для
- * определения правильного падежа
- * @returns {string} В зависимости от введенных данных - соответствующее предложение..
+ * определения правильного падежа.
+ * @returns {string} В зависимости от введенных данных - соответствующее предложение.
  */
 function checkPrompt() {
     const deposit = prompt("Введите сумму, которую вы хотите положить в банк.");
@@ -35,6 +35,7 @@ function checkPrompt() {
  */
 function setRightCaseForPenultimateElem(deposit) {
     let penultimateElem = deposit.charAt(deposit.length - 2);
+    
     if (penultimateElem === '1') {
         return "рублей";
     } else {
