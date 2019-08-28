@@ -34,7 +34,8 @@ function checkPrompt() {
  * @returns {string} - "рублей".
  */
 function setRightCaseForPenultimateElem(deposit) {
-    let penultimateElem = deposit.toString().charAt(deposit.length - 2);
+    deposit = String(deposit);
+    let penultimateElem = deposit.charAt(deposit.length - 2);
     
     if (penultimateElem === '1') {
         return "рублей";
