@@ -1,4 +1,4 @@
-checkPrompt();
+
 
 /**
  * Функция проверяет введенные данные и в зависимости от полученных данных
@@ -61,3 +61,6 @@ function setRightCase(deposit) {
             return "рублей";
     }
 }
+
+
+checkPrompt();
