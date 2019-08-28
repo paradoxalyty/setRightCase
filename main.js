@@ -7,18 +7,18 @@ checkPrompt();
  * @returns {string} В зависимости от введенных данных - соответствующее предложение.
  */
 function checkPrompt() {
-    const deposit = prompt("Введите сумму, которую вы хотите положить в банк.");
+    const deposit = parseInt(prompt("Введите сумму, которую вы хотите положить в банк."));
     
     if (deposit == null) {
         //Если пользователь нажмет кнопку <<отмена>>, prompt вернет NULL и программа завершит выполнение.
         alert("К сожалетию вы отменили сделку.");
-    } else if (isNaN(parseInt(deposit)) || !Number.isInteger(Number(deposit))) {
+    } else if (isNaN(deposit) || !Number.isInteger(Number(deposit))) {
         alert("Необходимо ввести целое число, попробуйте ещё раз.");
         checkPrompt();
-    } else if (parseInt(deposit) === 0) {
+    } else if (deposit === 0) {
         alert("Вы ввели 0, попробуйте ещё раз.");
         checkPrompt();
-    } else if (parseInt(deposit) < 0) {
+    } else if (deposit < 0) {
         alert("Вы ввели отрицательное число, попробуйте ещё раз.");
         checkPrompt();
     } else {
@@ -34,7 +34,7 @@ function checkPrompt() {
  * @returns {string} - "рублей".
  */
 function setRightCaseForPenultimateElem(deposit) {
-    let penultimateElem = deposit.charAt(deposit.length - 2);
+    let penultimateElem = deposit.toString().charAt(deposit.length - 2);
     
     if (penultimateElem === '1') {
         return "рублей";
@@ -51,7 +51,7 @@ function setRightCaseForPenultimateElem(deposit) {
  */
 function setRightCase(deposit) {
 
-    switch (parseInt(deposit) % 10) {
+    switch (deposit % 10) {
         case 1:
             return "рубль";
         case 2:
